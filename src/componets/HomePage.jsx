@@ -1,208 +1,256 @@
 import React from "react";
-import HeroTitle from "./HeroTitle";
-
-import scrolImg from "../assets/scroll.gif";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Faq from "./Faq";
-import ContactUs from "./ContactUs";
-import AboutUs from "./AboutUs";
-import Poster from "./Poster";
-import Tagline from "./Tagline";
-import Menu from "./Menu";
+import { ParallaxBanner } from "react-scroll-parallax";
 import { useWindowSize } from "react-use";
-import CountDown from "./CountDown";
-import Sponsors from "./Sponsors/Sponsors";
-import GameWork from "./GameWork";
-import AllUNeed2Know from "./AllUNeed2Know";
+
 import "./animation.css";
 
-// parallax images import here
-import satImg from "../assets/satlite.png";
-import moonImg from "../assets/moon.png";
-import asiet from "../assets/asiet1.png";
-import planetGif from "../assets/earth1.gif";
-import cloud1 from "../assets/cloud1.png";
-import cloud2 from "../assets/cloud_grp.png";
-import PrizeMoney from "./PrizeMoney";
-// import mountainImg from "../assets/mountain.png";
-// import landScapeImg from "../assets/landscape.png";
-// import asietImg from "../assets/asiet.png";
+import AllUNeed2Know from "./AllUNeed2Know";
+import AboutUs from "./AboutUs";
+import CountDown from "./CountDown";
+import ContactUs from "./ContactUs";
+import Faq from "./Faq";
+import HeroTitle from "./HeroTitle";
+import Menu from "./Menu";
+import PosterCarousel from "./PosterCarousel";
+import Sponsors from "./Sponsors/Sponsors";
+import Tagline from "./Tagline";
 
-const HomePage = () => {
-  const { width, height } = useWindowSize();
-  // refer parallax
-  let pageShow = [];
-  pageShow = [0, 0, 0, 0, 0];
-  pageShow[4] = "scale-[2.5]";
-  // let pages = width < 450 ? (height < 700 ? 8.3 : 5.7) : height < 750 ? 5.7 : 4.5
-  let pages = 0;
-  if (width < 450) {
-    if (height < 750) {
-      pages = 8;
-    } else {
-      pages = 5.8;
-    }
-  } else {
-    if (height < 750) {
-      pages = 5.5;
-    } else {
-      pages = 4.6;
-    }
-  }
-  return (
-    <div className="bg-black">
-      <Menu />
-      <div className="bg-animation">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-        <div id="stars4"></div>
-      </div>
-      <Parallax
-        pages={pages}
-        style={{
-          zIndex: 10,
-        }}
-      >
-        {/* Main Title */}
-        <ParallaxLayer speed={3} offset={0.1}>
-          {/* <Install/> */}
-          <PrizeMoney />
-        </ParallaxLayer>
-        <ParallaxLayer speed={0.3} offset={0.1}>
-          {/* <Install/> */}
-          <HeroTitle />
-        </ParallaxLayer>
-        {/* Planet */}
-        <ParallaxLayer
-          offset={0.55}
-          factor={1.5}
-          speed={1}
-          className="flex justify-center"
-        >
-          {/* transparent gif */}
-          <img
-            src={planetGif}
-            alt="planet"
-            className="absolute z-10 w-[100vw] md:w-[80vw] object-cover lg:ml-20 ml-10"
-          />
-        </ParallaxLayer>
-        {/* CountDown */}
-        <ParallaxLayer offset={0.7} speed={1}>
-          <CountDown />
-        </ParallaxLayer>
-        {/* Satlite */}
-        <ParallaxLayer
-          offset={width < 450 ? (height < 650 ? 1.2 : 1.2) : 1.3}
-          speed={width < 450 ? (height < 650 ? 0.01 : 0.01) : 0.01}
-          factor={2}
-          className="transition-all duration-500 ease-in-out opacity-40"
-        >
-          <img
-            src={satImg}
-            alt="Satlite"
-            className="scale-50 -ml-40 md:-ml-20"
-          />
-        </ParallaxLayer>
-        {/* Moon */}
-        <ParallaxLayer
-          offset={width < 450 ? (height < 650 ? 1.9 : 1.9) : 1.8}
-          speed={0.5}
-        >
-          <img
-            src={moonImg}
-            alt="Moon"
-            className="scale-[2] md:scale-75 ml-[50vw] shadow-[inset_53px_0_100px_49px_rgba(0,0,0,0.75)] object-cover opacity-40"
-          />
-        </ParallaxLayer>
-        {/* Moon Shadow */}
-        <ParallaxLayer
-          offset={width < 450 ? (height < 650 ? 1.8 : 1.8) : 1.8}
-          speed={0.1}
-          className="flex  md:scale-75 justify-end"
-        >
-          <div className="h-[100vw] md:h-[600px] md:ml-[45vw] w-[100vw] md:w-[45vw] shadow-[inset_53px_0_100px_49px_rgba(0,0,0,0.25)] rounded-full blur-md bg-black opacity-50"></div>
-        </ParallaxLayer>
-        {/* Cloud 1*/}
-        <ParallaxLayer
-          offset={width < 450 ? (height < 650 ? 2.3 : 2.3) : 2.6}
-          speed={width < 450 ? (height < 650 ? 1.8 : 1.8) : 1.8}
-        >
-          <img
-            src={cloud1}
-            alt="clouds"
-            className="scale-80 ml-32 md:ml-96 object-cover opacity-40"
-          />
-        </ParallaxLayer>
-        {/* Cloud 2 */}
-        <ParallaxLayer
-          offset={width < 450 ? (height < 650 ? 2.2 : 2.2) : 2.5}
-          speed={width < 450 ? (height < 650 ? 1.1 : 1.1) : 0.5}
-        >
-          <img
-            src={cloud2}
-            alt="clouds"
-            className="scale-80  ml-10 md:ml-72 object-cover opacity-40"
-          />
-        </ParallaxLayer>
-        {/* Cloud 3 */}
-        <ParallaxLayer
-          offset={width < 450 ? (height < 650 ? 4.0 : 4.0) : 3}
-          speed={width < 450 ? (height < 650 ? 1.5 : 1.5) : -0.3}
-          factor={2}
-        >
-          <img
-            src={cloud2}
-            alt="clouds"
-            className="scale-80  -ml-28 md:-ml-80  object-cover opacity-40"
-          />
-        </ParallaxLayer>
-        {/* College */}
-        <ParallaxLayer
-          speed={0.6}
-          sticky={{
-            start: 3.5,
-            end: 9,
-          }}
+import planetVideo from "../assets/earth2.mp4";
+import planetVideoM from "../assets/earthmobile.mp4";
+import cloudImg from "../assets/Parallax/cloud.png.webp";
+import collegePic from "../assets/Parallax/asiet.png.webp";
+// import prizeVideo from "../assets/prize.mp4";
+import prizeVideoM from "../assets/prizeM.mp4";
+
+const Component = () => {
+  const { width } = useWindowSize();
+
+  const background: BannerLayer = {
+    speed: -10,
+    translateX: width > 640 ? [0, -20] : [0, -40],
+    scale: width > 640 ? [2.5, 1.5, "easeOutCubic"] : [1, 0.5, "easeOutCubic"],
+    shouldAlwaysCompleteAnimation: true,
+    children: (
+      <div className="bg-animation no-animation">
+        <div
+          id="stars"
           style={{
-            backgroundImage: `url(${asiet})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            zIndex: -20,
+            animationPlayState: "paused",
           }}
-          className="opacity-40"
-        ></ParallaxLayer>
-
-        {/* Main Componets */}
-        <>
-          <ParallaxLayer offset={0.99} speed={1}>
-            <Tagline />
-            <Sponsors />
-            <AboutUs />
-            <Poster />
-            <GameWork />
-            <AllUNeed2Know />
-            <Faq />
-            <ContactUs />
-          </ParallaxLayer>
-        </>
-        {/* Scroll bar */}
-        <ParallaxLayer
-          factor={0.5}
-          speed={10}
-          offset={0.5}
-          className="flex justify-center "
+        ></div>
+        <div
+          id="stars2"
+          style={{
+            animationPlayState: "paused",
+          }}
+        ></div>
+        <div
+          id="stars3"
+          style={{
+            animationPlayState: "paused",
+          }}
+        ></div>
+        <div
+          id="stars4"
+          style={{
+            animationPlayState: "paused",
+          }}
+        ></div>
+      </div>
+    ),
+  };
+  const videoglobe: BannerLayer = {
+    translateY: width > 640 ? ["25%", "-25%"] : ["90%", "-25%"],
+    translateX: width > 640 ? ["48%", "50%"] : ["0%", "0%"],
+    opacity: [0.95, 0.8, "easeOutCubic"],
+    scale: [width > 640 ? 0.8 : 1, width > 640 ? 1.1 : 1, "easeOutCubic"],
+    // onChange: (el) => {
+    //   console.log(el.el.firstChild.firstChild);
+    //   el.el.firstChild.currentTime = el.progress * 10;
+    // },
+    children: (
+      <div className="flex justify-center w-full h-full">
+        <video
+          autoPlay
+          loop
+          muted
+          className="top-0 absolute bottom-0 object-contain h-screen min-w-max md:h-auto "
         >
-          <img
-            className="fixed bottom-0 z-20 content-center hidden w-32 pt-24 pb-1 m-auto md:block "
-            src={scrolImg}
-            alt="scroll wheel"
-          ></img>
-        </ParallaxLayer>
-      </Parallax>
-    </div>
+          {/* <source src={planetVideo} type='video/mp4; codecs="hvc1"' /> */}
+          {width > 640 ? (
+            <source src={planetVideo} type='video/mp4; codecs="avc1"' />
+          ) : (
+            <source src={planetVideoM} type='video/mp4; codecs="avc1"' />
+          )}
+        </video>
+      </div>
+    ),
+  };
+  const videoprize: BannerLayer = {
+    translateY: width > 640 ? ["45%", "30%"] : ["20%", "0%"],
+    opacity:
+      width > 640 ? [3.5, -0.7, "easeOutCubic"] : [1, 0.9, "easeOutCubic"],
+    scale: [width > 640 ? 1 : 1, width > 640 ? 0.6 : 1, "easeOutCubic"],
+    children: (
+      <div className="flex justify-center w-full h-full">
+        <video
+          autoPlay
+          loop
+          muted
+          className="z-30 top-0 absolute bottom-0 object-contain md:h-auto "
+        >
+          {width > 640 ? (
+            <source src={prizeVideoM} type='video/mp4; codecs="avc1"' />
+          ) : (
+            <source src={prizeVideoM} type='video/mp4; codecs="avc1"' />
+          )}
+        </video>
+      </div>
+    ),
+  };
+  const headline: BannerLayer = {
+    translateX: width > 640 ? [5, 20] : [0, 0],
+    translateY: [width > 640 ? -2 : -10, -20],
+    speed: 40,
+    scale: [1, 1.15, "easeOutCubic"],
+    shouldAlwaysCompleteAnimation: true,
+    expanded: false,
+    children: (
+      <div className="absolute p-5 inset-0 flex items-center justify-center md:justify-start ">
+        <HeroTitle />
+      </div>
+    ),
+  };
+  const countdown = {
+    translateY: [width > 640 ? 86 : 69, 70],
+    speed: -10,
+    translateX: width > 640 ? [6, 20] : [0, 0],
+    scale: [1, 1.15, "easeOutCubic"],
+    shouldAlwaysCompleteAnimation: true,
+    expanded: false,
+    children: <CountDown />,
+  };
+  const tagline: BannerLayer = {
+    translateY: [width > 640 ? 65 : 60, width > 640 ? 48 : 68],
+    shouldAlwaysCompleteAnimation: true,
+    children: (
+      <>
+        <Tagline />
+      </>
+    ),
+  };
+  return (
+    <>
+      <div className="bg-gradient-to-b from-transparent via-[#7285d328] to-[#7285d371] ">
+        <Menu />
+        {width > 640 ? (
+          <>
+            <ParallaxBanner
+              layers={[
+                background,
+                videoglobe,
+                headline,
+                countdown,
+                // sponsers,
+                // videoprize,
+                tagline,
+              ]}
+              // gradientOverlay]}
+              className="h-[100vh] bg-black"
+            ></ParallaxBanner>
+            <div className="flex justify-center w-full h-full">
+              <video
+                autoPlay
+                loop
+                muted
+                className="z-30 top-10 absolute bottom-0 object-contain md:h-auto "
+              >
+                {width > 640 ? (
+                  <source src={prizeVideoM} type='video/mp4; codecs="avc1"' />
+                ) : (
+                  <source src={prizeVideoM} type='video/mp4; codecs="avc1"' />
+                )}
+              </video>
+            </div>
+            <Sponsors />
+          </>
+        ) : (
+          <>
+            <ParallaxBanner
+              layers={[
+                background,
+                headline,
+                videoglobe,
+                countdown,
+                videoprize,
+                tagline,
+              ]}
+              className="h-[110vh] bg-black"
+            />
+            {/* <Tagline /> */}
+            <Sponsors />
+          </>
+        )}
+        <div className="bg-animation -z-10">
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+          <div id="stars4"></div>
+        </div>
+        {/* <Timeline /> */}
+        {/* <Partners /> */}
+        <PosterCarousel />
+        <ParallaxBanner
+          className="bg-gradient-to-b from-transparent via-[#171717]/50 to-[#171717]/50"
+          layers={[
+            {
+              translateY: [width > 640 ? 70 : 84, -15],
+              translateX: [width > 640 ? -60 : -100, 30],
+              scale: [3, 0.7, "easeOutCubic"],
+              children: (
+                <img
+                  className="w-full md:w-1/2 opacity-70"
+                  src={cloudImg}
+                  alt="Cloud"
+                  loading="lazy"
+                />
+              ),
+            },
+            {
+              translateY: [width > 640 ? 70 : 80, -15],
+              translateX: [width > 640 ? 178 : 100, width > 640 ? -30 : -50],
+              scale: [width > 640 ? 3 : 4, 0.7, "easeOutCubic"],
+              children: (
+                <img
+                  className="w-full md:w-1/2 opacity-70"
+                  src={cloudImg}
+                  alt="Cloud"
+                  loading="lazy"
+                />
+              ),
+            },
+            {
+              speed: 80,
+              translateY: [width > 640 ? 64 : 57, width > 640 ? 90 : 110],
+              scale: [1, 1.5, "easeOutCubic"],
+              children: (
+                <img
+                  className="w-screen"
+                  src={collegePic}
+                  alt="College"
+                  loading="lazy"
+                />
+              ),
+            },
+          ]}
+        >
+          <AllUNeed2Know />
+          <Faq />
+          <AboutUs />
+          <ContactUs />
+        </ParallaxBanner>
+      </div>
+    </>
   );
 };
-
-export default HomePage;
+export default Component;

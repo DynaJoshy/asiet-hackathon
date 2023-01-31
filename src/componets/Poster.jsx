@@ -1,21 +1,21 @@
 import React from "react";
 import SamPos1 from "../assets/SamplePoster1.jpg";
 import PosterCard from "./PosterCard";
-import xbox from "../assets/Poster/xbox.png";
-import Ps from "../assets/Poster/ps5.png";
-import superM from "../assets/Poster/supermario.png";
-import mcSteeve from "../assets/Poster/minecraft.png";
-import drone from "../assets/Poster/drone2.png";
-import idea from "../assets/Poster/Idea.png";
-import vr from "../assets/Poster/ARVR.png";
+import xbox from "../assets/Poster/xbox.png.webp";
+import Ps from "../assets/Poster/ps5.png.webp";
+import superM from "../assets/Poster/supermario.png.webp";
+import mcSteeve from "../assets/Poster/minecraft.png.webp";
+import drone from "../assets/Poster/drone2.png.webp";
+import idea from "../assets/Poster/Idea.png.webp";
+import vr from "../assets/Poster/ARVR.png.webp";
 
 const Poster = () => {
   const categories = [
     {
       id: 0,
-      name: "Productathon",
+      name: "Codathon",
       tagline:
-        "Productathon is a 24hrs Hackathon event, where aspiring student entrepreneurs can come collaborate and build their startup ideas to a minimum viable product (MVP) with the support of Nasscom 10k Startups , MakerGram and Google Cloud.",
+        "Codathon is a 24hrs Hackathon event, where aspiring student entrepreneurs can come collaborate and build their startup ideas to a minimum viable product (MVP) with the support of Nasscom 10k Startups , MakerGram and Google Cloud.",
       href: "#link",
       picture: SamPos1,
       pictureAlt: "Description of your picture",
@@ -32,24 +32,21 @@ const Poster = () => {
       tagline:
         "Gameathon is also a 24hrs Hackathon event, where students will receive hybrid mentoring bootcamp in Unity Game Development. In addition, they can build their own creative games or startup products through games with the support of TiltLabs Consultancy Services Pvt Ltd and JITF Banglore.",
       href: "#link",
-      picture:
-        "https://fancytailwind.com/static/furniture1-cc3771ea8f6070740dda23b432a8e5c3.jpg",
-      pictureAlt: "Description of your picture",
+  
       front1: superM,
-      
       front2: xbox,
       back1: mcSteeve,
       back2: Ps,
+
       price: "5.5 Lakhs",
     },
     {
       id: 2,
-      name: "Ideathon",
+      name: "Young Scientist Award",
       tagline:
-        "Ideathon is an exclusive program offered to school students where we are planning to mentor, support and fund to school students startup ideas.",
+        "Young Scientist Award is an exclusive program offered to school students where we are planning to mentor, support and fund to school students startup ideas.",
       href: "#link",
-      picture:
-        "https://fancytailwind.com/static/lamp1-cd268fab2e874e2255fa2f8c4a9d9b93.jpg",
+       
       pictureAlt: "Description of your picture",
       front1: idea,
       
@@ -59,12 +56,12 @@ const Poster = () => {
       price: "3.5 Lakhs",
     },
   ];
-
+  
   return (
     <div className="mx-auto py-5 px-4 w-full max-w-7xl bg-transparent md:mt-56">
       <div className="mx-auto max-w-md md:max-w-none flex flex-col md:flex-row items-center ">
         {/* :TITLE */}
-        <h2 className="relative m-4 md:w-16 lg:w-24 flex justify-center text-xl lg:text-3xl text-gray-400 font-bold uppercase tracking-widest whitespace-nowrap origin-center transform md:-rotate-90 hover:text-gray-700">
+        <h2 className="relative m-4 md:w-16 lg:w-24 flex justify-center text-base lg:text-2xl text-gray-400 font-bold uppercase tracking-widest whitespace-nowrap origin-center transform md:-rotate-90 hover:text-gray-700">
           <a href="#allCategoryLink">
             All <span className="text-[var(--primary-color)]">Categories</span>
           </a>

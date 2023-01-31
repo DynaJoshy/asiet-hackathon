@@ -4,24 +4,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 :root {
-  --primary-color: #0d6394;
+  --primary-color: #7286D3;
+  --primary-accent-color: #65647C;
   --secondary-color: #f0f0f0;
-  --gradient-primary: #e0eafc;
-  --gradient-secondary: #cfdef3;
+  --accent-color: #E97777;
+  --gradient-primary: #f0f0f0;
+  --gradient-secondary: #f0f0f0;
 }
 /* *{
   outline: 3px solid limegreen !important;
 } */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@200&family=Roboto+Slab:wght@700&display=swap");
-
-html {
-  scroll-behavior: smooth;
-}
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;400&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap');
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,15 +37,17 @@ code {
 @font-face {
   font-family: "Azonix";
   src: local("Azonix"), url(fonts/Azonix.otf) format("opentype");
-}
-
-#tsparticles {
-  background: black;
-  z-index: 1;
-  position: fixed;
+  font-display: swap;
 }
 
 @layer utilities {
+  @variants group-hover {
+    .shape-btn-h-32 {
+      stroke-width: 4;
+      stroke-dasharray: 125, 340;
+      stroke-dashoffset: 265;
+    }
+  }
   .transform-letter-te7 {
     transform: translateZ(25px);
     transform-origin: 50% 50% 25px;
@@ -86,16 +88,16 @@ code {
     }
   }
   .transform-after-the3 {
-    transform: translate3d(101%,0,0);
+    transform: translate3d(101%, 0, 0);
   }
   @variants group-hover {
     .transform-h-after-the3 {
-      transform: translate3d(0,0,0);
+      transform: translate3d(0, 0, 0);
     }
   }
   .shadow-text5 {
     text-shadow: -15px 5px 20px #ced0d3;
-    }
+  }
   @variants hover {
     .shadow-h-text5 {
       text-shadow: -16px 6px 15px #ced0d3;
@@ -112,4 +114,80 @@ code {
       -0.2rem 0.1rem 1rem #f1f1f1, 0.2rem 0.1rem 1rem #f1f1f1,
       0 -0.5rem 2rem #e2dcc8, 0 0.5rem 3rem #e2dcc8;
   }
+}
+
+@keyframes marquee-alt {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.moving-text {
+  animation: marquee-alt 15s linear infinite;
+}
+.moving-text:hover {
+  animation-play-state: paused;
+}
+@keyframes moveNext {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(20%) scale(1.2);
+  }
+  100% {
+    transform: translateX(0%) scale(1);
+  }
+}
+
+@keyframes moveNext2 {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(20%) scale(1.2);
+  }
+  100% {
+    transform: translateX(0%) scale(1);
+  }
+}
+
+.nextAnimation1 {
+  animation: moveNext 0.3s ease-in-out;
+}
+.nextAnimation2 {
+  animation: moveNext2 0.3s ease-in-out;
+}
+
+@keyframes movePrev1 {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(-20%) scale(1.2);
+  }
+  100% {
+    transform: translateX(0%) scale(1);
+  }
+}
+
+@keyframes movePrev2 {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(-20%) scale(1.2);
+  }
+  100% {
+    transform: translateX(0%) scale(1);
+  }
+}
+
+.prevAnimation1 {
+  animation: movePrev1 0.3s ease-in-out;
+}
+.prevAnimation2 {
+  animation: movePrev2 0.3s ease-in-out;
 }

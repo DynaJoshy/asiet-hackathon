@@ -99,24 +99,30 @@ const TypeAnimation = () => {
       }}
       className="relative font-extrabold bg-clip-text bg-gradient-to-br from-pc to-sc text-transparent"
     > 
-    <span className='invisible'>
+    <span className='invisible md:hidden'>
       &#95;
       
     </span>
       <span id="text" className="invisible w-44 align-top">
         <span className="sentences-te16">HACKATHON</span>
-        <span className="sentences-te16">PRODUCATHON</span>
-        <span className="sentences-te16">IDEATHON</span>
+        <span className="sentences-te16">CODATHON</span>
         <span className="sentences-te16">GAMETHON</span>
-        <span className="sentences-te16">PRODUCATHON</span>
-        <span className="sentences-te16">IDEATHON</span>
+        <span className="sentences-te16">YOUNG SCIENTIST AWARD</span>
+        <span className="sentences-te16">MECHATHON</span>
+        <span className="sentences-te16">CIVILATHON</span>
+        <span className="sentences-te16">BIZTHON</span>
+        <span className="sentences-te16">CODATHON</span>
         <span className="sentences-te16">GAMETHON</span>
-        <span className="sentences-te16">PRODUCATHON</span>
-        <span className="sentences-te16">IDEATHON</span>
+        <span className="sentences-te16">YOUNG SCIENTIST AWARD</span>
+        <span className="sentences-te16">MECHATHON</span>
+        <span className="sentences-te16">CIVILATHON</span>
+        <span className="sentences-te16">BIZTHON</span>
+        <span className="sentences-te16">CODATHON</span>
         <span className="sentences-te16">GAMETHON</span>
-        <span className="sentences-te16">PRODUCATHON</span>
-        <span className="sentences-te16">IDEATHON</span>
-        <span className="sentences-te16">GAMETHON</span>
+        <span className="sentences-te16">YOUNG SCIENTIST AWARD</span>
+        <span className="sentences-te16">MECHATHON</span>
+        <span className="sentences-te16">CIVILATHON</span>
+        <span className="sentences-te16">BIZTHON</span>
         <span className="sentences-te16">HACKATHON</span>
       </span>
       <span id='underscore' className="inline-block relative -top-1.5 left-1.5 font-extrabold bg-clip-text bg-gradient-to-br from-sc to-sc text-transparent">&#95;</span>

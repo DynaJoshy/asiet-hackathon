@@ -3,7 +3,7 @@ import React from 'react'
 
 const buttonEffect34 = ({ children }) => {
   return (
-    <span className="mx-5 mb-7 group relative inline-block px-5 py-2.5 text-[#E2DCC8] font-medium tracking-widest uppercase overflow-hidden transition-all duration-300 ease-in hover:text-black hover:bg-[#F1F1F1] hover:rounded hover:shadow-btn34">
+    <span className="mx-5 mb-7 group relative inline-block px-5 py-2.5 text-[#E2DCC8] font-medium tracking-widest uppercase overflow-hidden transition-all duration-300 ease-in hover:text-[#171717] hover:bg-[#F1F1F1] hover:rounded hover:shadow-btn34">
       {/* left border */}
       <span className="absolute -left-full top-0 w-full h-0.5 block animate-btn34-left transition-all" style={{ background: 'linear-gradient(90deg, transparent, #E2DCC8)' }}/>
       {/* top border */}

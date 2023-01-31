@@ -24,7 +24,7 @@ export default class HeroTitle extends Component {
   render() {
     return (
       <div
-        className="h-screen flex pb-[33vh] justify-center content-center items-center mb-10 z-10"
+        className="h-[70vh] flex justify-center  content-center items-center  md:mt-[5vh] "
         ref={this.element}
       >
         <h1
@@ -32,13 +32,13 @@ export default class HeroTitle extends Component {
             fontFamily: "Azonix",
             transformStyle: "preserve-3d",
           }}
-          className="text-4xl p-1 md:max-w-[70vw] sm:text-6xl  xl:text-8xl text-center bg-clip-text bg-gradient-to-br from-pc to-sc font-extrabold"
+          className="text-4xl p-1  md:max-w-[70vw] md:text-6xl text-center md:text-left bg-clip-text bg-gradient-to-br from-pc to-sc font-extrabold -z-20"
         >
-          <span className="text-transparent">ADI SHANKARA </span>
+          <span className="text-transparent leading-[1.8]">ADI SHANKARA </span>
           <span ref={this.textRef}>
             <TypeAnimation />
           </span>
-          <span className="text-transparent">2K23</span>
+          <span className="text-transparent leading-[1.8]">2K23</span>
         </h1>
       </div>
     );
